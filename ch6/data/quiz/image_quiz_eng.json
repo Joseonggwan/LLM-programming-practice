@@ -1,0 +1,22 @@
+[
+    {
+        "no": 1,
+        "eng": "Which of the following descriptions of the image is incorrect?\n- (1) There are motorcycles lined up next to the road.\n- (2) The building has a classic architectural style.\n- (3) There are small trees in front of the building.\n- (4) Several cars are parked on the road.",
+        "img": "bike.jpg"
+    },
+    {
+        "no": 2,
+        "eng": "Which of the following descriptions of the image is incorrect?\n- (1) Two people are giving a presentation on stage.\n- (2) The screen introduces the \"Healthcare EcoSystem.\"\n- (3) All the attendees are sitting with their backs to the stage.\n- (4) There is a large screen set up in the background.",
+        "img": "khf2025.jpg"
+    },
+    {
+        "no": 3,
+        "eng": "Which of the following descriptions of the image is incorrect?\n- (1) Several drink machines are visible.\n- (2) Thinly sliced meat is displayed in a tiered manner.\n- (3) Various dishes are placed on the table.\n- (4) The clerk is wearing a blue uniform.",
+        "img": "meat.jpg"
+    },
+    {
+        "no": 4,
+        "eng": "Which of the following descriptions of the image is incorrect?\n- (1) The chefs are wearing hats.\n- (2) People are baking bread on a table.\n- (3) There is flour sprinkled on the workbench.\n- (4) All chefs are wearing white uniforms.",
+        "img": "dumpling.jpg"
+    }
+]
