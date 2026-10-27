@@ -1,0 +1,70 @@
+Command: python3 -m unittest discover -s tests -v
+Exit code: 1
+Original output:
+test_blank_action (test_actions.ActionTests.test_blank_action) ... FAIL
+test_colon_in_action (test_actions.ActionTests.test_colon_in_action) ... ok
+test_empty (test_actions.ActionTests.test_empty) ... ERROR
+test_multiple (test_actions.ActionTests.test_multiple) ... ok
+test_no_action (test_actions.ActionTests.test_no_action) ... ok
+test_normal (test_actions.ActionTests.test_normal) ... ok
+test_trim (test_actions.ActionTests.test_trim) ... FAIL
+test_whitespace_only (test_actions.ActionTests.test_whitespace_only) ... ERROR
+
+======================================================================
+ERROR: test_empty (test_actions.ActionTests.test_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joseong-gwan/llm-programming/harness/meeting-harness/tests/test_actions.py", line 10, in test_empty
+    self.assertEqual(extract_actions(""), [])
+                     ~~~~~~~~~~~~~~~^^^^
+  File "/Users/joseong-gwan/llm-programming/harness/meeting-harness/src/actions.py", line 4, in extract_actions
+    raise ValueError("회의록이 비어 있습니다")
+ValueError: 회의록이 비어 있습니다
+
+======================================================================
+ERROR: test_whitespace_only (test_actions.ActionTests.test_whitespace_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joseong-gwan/llm-programming/harness/meeting-harness/tests/test_actions.py", line 13, in test_whitespace_only
+    self.assertEqual(extract_actions(" \n\t"), [])
+                     ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/joseong-gwan/llm-programming/harness/meeting-harness/src/actions.py", line 4, in extract_actions
+    raise ValueError("회의록이 비어 있습니다")
+ValueError: 회의록이 비어 있습니다
+
+======================================================================
+FAIL: test_blank_action (test_actions.ActionTests.test_blank_action)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joseong-gwan/llm-programming/harness/meeting-harness/tests/test_actions.py", line 19, in test_blank_action
+    self.assertEqual(extract_actions("할 일:   "), [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['   '] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'   '
+
+- ['   ']
++ []
+
+======================================================================
+FAIL: test_trim (test_actions.ActionTests.test_trim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/joseong-gwan/llm-programming/harness/meeting-harness/tests/test_actions.py", line 16, in test_trim
+    self.assertEqual(extract_actions("  할 일:  발표 준비  "), ["발표 준비"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['발표 준비']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'발표 준비'
+
+- []
++ ['발표 준비']
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.003s
+
+FAILED (failures=2, errors=2)
